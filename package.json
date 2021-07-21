@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
-    "cloudinary": "^1.26.2"
+    "cloudinary": "^1.26.2",
+    "gh-pages": "^3.2.3"
   }
 }
