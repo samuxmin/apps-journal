@@ -12,8 +12,8 @@ export const Sidebar = () => {
   };
 
   const handleAddNewEntry = () => {
-    dispatch( startNewNote() )
-  }
+    dispatch(startNewNote());
+  };
   return (
     <aside className='journal__sidebar'>
       <div className='journal__sidebar-navbar'>

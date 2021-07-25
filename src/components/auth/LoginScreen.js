@@ -9,11 +9,9 @@ import { useForm } from '../../hooks/useForm';
 export const LoginScreen = () => {
   const dispatch = useDispatch();
   const [formValues, handleInputChange] = useForm({
-    email: '',
-    password: '',
+    email: 'abc@gmail.com',
+    password: '123abc',
   });
-
-
 
   const { email, password } = formValues;
 
@@ -39,17 +37,16 @@ export const LoginScreen = () => {
   const handleGoogleLogin = () => {
     dispatch(startGoogleLogin());
   };
-  const {msgError, loading} = useSelector((state) => state.ui);
+  const { msgError, loading } = useSelector((state) => state.ui);
 
   return (
     <>
       <h3 className='auth__title'>Login</h3>
-      <form onSubmit={handleLogin} className='animate__animated animate__fadeIn animate__faster'>
-      { msgError &&
-            (<div className='auth__alert-error'>
-              {msgError}
-            </div>)
-         }
+      <form
+        onSubmit={handleLogin}
+        className='animate__animated animate__fadeIn animate__faster'
+      >
+        {msgError && <div className='auth__alert-error'>{msgError}</div>}
         <input
           className='auth__input'
           type='text'
@@ -67,7 +64,11 @@ export const LoginScreen = () => {
           value={password}
           onChange={handleInputChange}
         />
-        <button className='btn btn-primary btn-block' type='submit' disabled={loading}>
+        <button
+          className='btn btn-primary btn-block'
+          type='submit'
+          disabled={loading}
+        >
           Login
         </button>
 
